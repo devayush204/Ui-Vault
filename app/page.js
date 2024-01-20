@@ -59,7 +59,9 @@ export default function Home() {
       <div className="px-8">
         <Hero />
       </div>
-      <Footer />
+      <div>
+        <Footer />
+      </div>
 
     </main>
   );

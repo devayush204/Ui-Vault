@@ -1,28 +1,37 @@
 "use client"
-import React from 'react'
+import React, { useMemo } from 'react'
 import Image from 'next/image'
 import logo from "@/public/logo.png"
 import Link from 'next/link'
 import { PlusCircle } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { componentsList } from '../data/ComponentsData'
-import { useRouter } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
 
 
 const Sidebar = () => {
 
     const router = useRouter()
+
+    const pathname = usePathname()
+
+    const isActive = (link) => {
+        return pathname === link
+    }
+
+
+
     return (
-        <div className='max-w-xs min-w-[250px] w-full md:flex hidden'>
+        <div className='max-w-xs min-w-[250px] w-full md:block hidden'>
             <div className="flex h-screen flex-col justify-between border-e bg-white ">
                 <div className="px-4 py-6 overflow-x-auto">
                     <span className="grid h-8 place-content-center rounded-lg  w-full text-xs text-gray-600">
                         <Image src={logo} className='object-contain w-48' alt='' />
                     </span>
 
-                    <ul className="mt-6 space-y-1">
+                    <ul className="mt-6 space-y-4">
                         <li className='w-full'>
-                            <Link href="/" className="block rounded-lg bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
+                            <Link href="/" className={`block ${isActive("/") ? "bg-gray-100 text-black" : "text-gray-500"} rounded-lg  px-4 py-2 text-sm font-medium hover:bg-gray-100 `}>
                                 Home
                             </Link>
                         </li>
@@ -30,9 +39,10 @@ const Sidebar = () => {
                         <li>
                             <details className="group [&_summary::-webkit-details-marker]:hidden">
                                 <summary
-                                    className="flex cursor-pointer items-center justify-between rounded-lg px-4 py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
+                                    onClick={() => router.push("/component")}
+                                    className={`flex cursor-pointer ${isActive("/component") ? "bg-gray-100 text-black" : "text-gray-500"} items-center justify-between rounded-lg px-4 py-2  hover:bg-gray-100 `}
                                 >
-                                    <span className="text-sm font-medium w-full" onClick={() => router.push("/component")}> Components </span>
+                                    <span className="text-sm font-medium w-full" > Components </span>
 
                                     <span className="shrink-0 transition duration-300 group-open:-rotate-180">
                                         <svg
@@ -56,7 +66,7 @@ const Sidebar = () => {
                                             <li key={index}>
                                                 <Link
                                                     href={"/" + item.href}
-                                                    className="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700"
+                                                    className={`block rounded-lg ${isActive("/" + item.href) ? "bg-gray-100 text-black" : "text-gray-500"} px-4 py-2 text-sm font-medium  hover:bg-gray-100 `}
                                                 >
                                                     {item.name}
                                                 </Link>
