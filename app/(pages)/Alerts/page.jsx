@@ -4,6 +4,10 @@ import PopupWithActions from './_components/Popup1'
 import PopupContent from './_components/Popup2'
 import PopupDefault from './_components/Popup4'
 import PopupContentIcons from './_components/Popup3'
+import PopupWithIcons from './_components/Popup5'
+import PopupWithBorder from './_components/Popup6'
+import Popuplist from './_components/Popup7'
+import PopupDismissing from './_components/Popup8'
 
 const Alert = () => {
     return (
@@ -18,6 +22,10 @@ const Alert = () => {
                 <PopupContent />
                 <PopupContentIcons />
                 <PopupDefault />
+                <PopupWithIcons />
+                <PopupWithBorder />
+                <Popuplist />
+                <PopupDismissing />
             </div>
         </div>
     )

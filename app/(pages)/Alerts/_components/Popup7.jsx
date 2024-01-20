@@ -4,7 +4,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { Copy } from 'lucide-react';
 
-const Popup = () => {
+const Popuplist = () => {
 
     const customCodeStyle = {
         backgroundColor: '#011627',
@@ -43,48 +43,36 @@ const Popup = () => {
 
 
     const code = `
-        <div role="alert" class="rounded-xl border border-gray-100 bg-white p-4">
-            <div class="flex items-start gap-4">
-                <span class="text-green-600">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        class="h-6 w-6"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                    </svg>
-                </span>
-
-                <div class="flex-1">
-                    <strong class="block font-medium text-gray-900"> Changes saved </strong>
-
-                    <p class="mt-1 text-sm text-gray-700">Your product changes have been saved.</p>
-                </div>
-
-                <button class="text-gray-500 transition hover:text-gray-600">
-                    <span class="sr-only">Dismiss popup</span>
-
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        class="h-6 w-6"
-                    >
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-    `;
+    
+<div class="flex p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 " role="alert">
+<svg class="flex-shrink-0 inline w-4 h-4 me-3 mt-[2px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+  <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+</svg>
+<span class="sr-only">Info</span>
+<div>
+  <span class="font-medium">Ensure that these requirements are met:</span>
+    <ul class="mt-1.5 list-disc list-inside">
+      <li>At least 10 characters (and up to 100 characters)</li>
+      <li>At least one lowercase character</li>
+      <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
+  </ul>
+</div>
+</div>
+<div class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 " role="alert">
+<svg class="flex-shrink-0 inline w-4 h-4 me-3 mt-[2px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+  <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+</svg>
+<span class="sr-only">Danger</span>
+<div>
+  <span class="font-medium">Ensure that these requirements are met:</span>
+    <ul class="mt-1.5 list-disc list-inside">
+      <li>At least 10 characters (and up to 100 characters)</li>
+      <li>At least one lowercase character</li>
+      <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
+  </ul>
+</div>
+</div>
+`;
 
 
 
@@ -93,7 +81,7 @@ const Popup = () => {
     return (
         <div className="mt-4">
             <div>
-                <h1 className='text-xl font-semibold'># Alert</h1>
+                <h1 className='text-xl font-semibold'># Alerts with list</h1>
                 <div className={`w-full  rounded-lg border border-black mt-6 overflow-hidden relative 
                 ${isVisible && "overflow-y-auto"} `}>
                     <div className='p-4'>
@@ -125,6 +113,6 @@ const Popup = () => {
     );
 };
 
-export default Popup;
+export default Popuplist;
 
 

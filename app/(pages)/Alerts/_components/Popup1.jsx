@@ -121,7 +121,7 @@ const PopupWithActions = () => {
   return (
     <div className="mt-4">
       <div>
-        <h1 className='text-xl font-semibold'># Popup with Actions</h1>
+        <h1 className='text-xl font-semibold'># Alert with Actions</h1>
         <div className={`w-full  rounded-lg border border-black mt-6 overflow-hidden relative 
                 ${isVisible && "overflow-y-auto"} `}>
           <div className='p-4'>
