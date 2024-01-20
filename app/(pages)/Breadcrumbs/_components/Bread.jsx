@@ -4,7 +4,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { Copy } from 'lucide-react';
 
-const Badge1 = () => {
+const Bread = ({ item }) => {
 
     const customCodeStyle = {
         backgroundColor: '#011627',
@@ -19,7 +19,7 @@ const Badge1 = () => {
 
     const handleCopy = () => {
 
-        const textToCopy = code.trim();
+        const textToCopy = item.code.trim();
         const textarea = document.createElement('textarea');
         textarea.value = textToCopy;
         textarea.style.position = 'fixed';
@@ -40,32 +40,25 @@ const Badge1 = () => {
         }
     };
 
-    const code = `
-       
-    <span class="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-sm text-purple-700">
-    Live
-  </span>
-    `;
+
 
     const [isVisible, setisVisible] = useState(false)
 
     return (
         <div className="mt-4">
             <div>
-                <h1 className='text-xl font-semibold'># Simple</h1>
+                <h1 className='text-xl font-semibold'># {item.title}</h1>
                 <div className={`w-full  rounded-lg border border-black mt-6 overflow-hidden relative 
                 ${isVisible && "overflow-y-auto"} `}>
-                    <div className='p-4 '>
-                        <div className='flex justify-center' dangerouslySetInnerHTML={{ __html: code }} />
+                    <div className='p-4'>
+                        <div className='' dangerouslySetInnerHTML={{ __html: item.code }} />
                     </div>
                     <h2 className="text-lg font-semibold my-2 pl-4">Code</h2>
                     <div style={customCodeStyle} className={`${isVisible ? "h-full transition-all 300ms ease-linear" : "max-h-[200px] transition-all 300ms ease-linear"}`}>
                         <SyntaxHighlighter language="jsx" style={nightOwl} showLineNumbers wrapLongLines>
-                            {code.trim()}
+                            {item.code.trim()}
                         </SyntaxHighlighter>
                         <button
-
-
                             className="copy-button absolute top-2 right-4 bg-blue-500 text-white p-2 rounded-md cursor-pointer text-sm"
                             onClick={handleCopy}
                         >
@@ -84,6 +77,6 @@ const Badge1 = () => {
     );
 };
 
-export default Badge1;
+export default Bread;
 
 

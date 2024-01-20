@@ -16,7 +16,7 @@ const Badges = () => {
         <div className='w-full h-full overflow-y-auto overflow-x-hidden relative px-8 pt-8'>
             <div className='flex flex-col space-y-3'>
                 <h1 className='text-4xl font-semibold'>Badge Components</h1>
-                <h5 className='p-2 bg-green-500 w-fit text-white px-6 text-sm'>Tailwind CSS Alerts</h5>
+                <h5 className='p-2 bg-green-500 w-fit text-white px-6 text-sm'>Tailwind CSS Badge</h5>
             </div>
             <div className='flex flex-col my-8'>
                 <Badge1 />
