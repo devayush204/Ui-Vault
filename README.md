@@ -1,4 +1,4 @@
-# UIForge - Open Source Tailwind CSS Components
+# UIForge - Open Source Tailwind CSS Components for developers
 
 **Discover UIForge - A curated collection of freely available Tailwind CSS components for your upcoming projects!**
 
