@@ -40,6 +40,5 @@ export const componentsList = [
     { name: 'FAQs', href: 'FAQs' },
     { name: 'Footers', href: 'Footers' },
     { name: 'Forms', href: 'Forms' },
-    { name: 'Header', href: 'Header' },
     { name: 'Popups', href: 'Popups' },
 ]  

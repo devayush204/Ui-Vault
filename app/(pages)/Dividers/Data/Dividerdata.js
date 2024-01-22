@@ -26,7 +26,7 @@ export const dividerdata = [
 </span>`
     },
     {
-        title: "#Align Right",
+        title: "Align Right",
         code: `
         <span class="flex items-center">
   <span class="h-px flex-1 bg-black"></span>
