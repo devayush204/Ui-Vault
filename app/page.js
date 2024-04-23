@@ -2,7 +2,6 @@
 import Image from "next/image";
 import logo from "@/public/logo.png"
 import { motion } from "framer-motion";
-import maker from "@/public/self.jpg"
 import { AlignRight, Github } from "lucide-react";
 import Hero from "./components/Hero";
 import Footer from "./components/Footer";
@@ -30,10 +29,10 @@ export default function Home() {
         <div className="flex items-center gap-7 justify-between">
           <div className="flex items-center gap-3">
             <div>
-              <Image src={maker} alt="founder" className="object-cover rounded-full h-[50px] w-[50px]" />
+              {/* <Image src={maker} alt="founder" className="object-cover rounded-full h-[50px] w-[50px]" /> */}
             </div>
             <div>
-              <h5>Sagar</h5>
+              <h5>Ayush</h5>
               <h5>maker @ <span>UIForge</span></h5>
             </div>
           </div>
